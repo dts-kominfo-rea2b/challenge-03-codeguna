@@ -21,10 +21,21 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+const listBelanjaan = (TempdataBelanjaan)=>{
+  return TempdataBelanjaan.map((dataBelanjaan) => 
+  {
+    return `- ${dataBelanjaan.nama} x ${dataBelanjaan.kuantitas}`;
+  });
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = (TempdataBelanjaan) => {
+  let total = 0;
+  for (const i in TempdataBelanjaan) {
+    total = total + (TempdataBelanjaan[i].harga * TempdataBelanjaan[i].kuantitas);
+  }
+  return total;
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
